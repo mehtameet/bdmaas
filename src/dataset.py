@@ -9,7 +9,7 @@ class datasets:
         print ("output is "+output)
         print (error)
         
-        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/data/* /data/'+dataset_name+'/*'
+        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/data/ /data/'+dataset_name+'/'
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
 
