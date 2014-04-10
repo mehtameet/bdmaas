@@ -2,6 +2,6 @@ from dataset import datasets
 
 datasetObj=datasets()
 
-str1=datasetObj.upload("dataset1")
-
-print (str1)
+#str1=datasetObj.upload("dataset1")
+jsondata=datasetObj.get_datasets("dataset1")
+print (jsondata)
