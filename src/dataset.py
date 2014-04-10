@@ -23,22 +23,14 @@ class datasets:
     
     def get_datasets(self,dataset_name):
         r = requests.get('http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data?op=LISTSTATUS')
-        #print r.json()
-#         for v in r.json():
-#             print v
-#         print r.json()['FileStatuses']['FileStatus']
+
         name_list=[]
         for v in r.json()['FileStatuses']['FileStatus']:
             if(v['type']=="FILE"):
                 print v['pathSuffix']
                 name_list.append(v['pathSuffix'])
         return name_list
-#         bashCommand='curl -i "http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data?op=LISTSTATUS"'
-#         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-#         output, error = process.communicate()
-#         print ("output is "+output)
-#         print (error)
-#         return output
+
 
     def get_columns(self,dataset_name):
         dataset_files=datasets.get_datasets(self, dataset_name)
@@ -50,7 +42,7 @@ class datasets:
         output, error = process.communicate()
         #print ("output is "+output)
         original_line=output.split("\n")
-        column_names=original_line[0].split(",")
+        column_names=original_line[0].replace("\r","").split(",")
         print column_names
         return column_names
         
