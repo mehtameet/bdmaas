@@ -48,6 +48,10 @@ class datasets:
         
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
-        print ("output is "+output)
-        print (error)
+        #print ("output is "+output)
+        original_line=output.split("\n")
+        column_names=original_line[0].split(",")
+        print column_names
+        return column_names
+        
     
