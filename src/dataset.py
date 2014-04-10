@@ -39,4 +39,15 @@ class datasets:
 #         print ("output is "+output)
 #         print (error)
 #         return output
+
+    def get_columns(self,dataset_name):
+        dataset_files=datasets.get_datasets(self, dataset_name)
+        print (dataset_files[0])
+        
+        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/"+dataset_files[0]+" | awk 'NR==1'"
+        
+        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        output, error = process.communicate()
+        print ("output is "+output)
+        print (error)
     
