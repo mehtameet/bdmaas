@@ -80,7 +80,10 @@ def get_columns(name):
 #         
 #         ''' + name
     print column_names
-    return '<div id=selcols>'+column_names+'</div>' 
+    result=""
+    for columns in column_names:
+        result+=columns
+    return '<div id=selcols>'+result+'</div>' 
 
 @route('/hello/<name>')
 def index(name):
