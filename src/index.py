@@ -63,21 +63,24 @@ def get_datasets():
 @route('/get_columns/<name>')
 def get_columns(name):
     print name
-    return '''
-        <div id="showColumns">
-        Hey<input type="checkbox" id="cb1" value="true" />
-        there<input type="checkbox" id="cb2" value="true" />
-        <div id="showCBs" style="display:none">
-            <p>IN COLUMNS _ CHECKBOX</p>
-        </div>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script>
-            $("#cb1").on('change',(function(){
-                console.log($(this).prop('checked') == 'checked');
-        });
-        </script>
-        
-        ''' + name
+    column_names=datasetObj.get_columns(name)
+#     return '''
+#         <div id="showColumns">
+#         Hey<input type="checkbox" id="cb1" value="true" />
+#         there<input type="checkbox" id="cb2" value="true" />
+#         <div id="showCBs" style="display:none">
+#             <p>IN COLUMNS _ CHECKBOX</p>
+#         </div>
+#         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+#         <script>
+#             $("#cb1").on('change',(function(){
+#                 console.log($(this).prop('checked') == 'checked');
+#         });
+#         </script>
+#         
+#         ''' + name
+    print column_names
+    return column_names 
 
 @route('/hello/<name>')
 def index(name):
