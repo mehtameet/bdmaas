@@ -11,23 +11,23 @@ class datasets:
         print ("output is "+output)
         print (error)
         
-        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/data/ /data/'+dataset_name+'/'
+        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/bdmaas/data/'+dataset_name+'/data/ /data/'+dataset_name+'/'
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
 
-        bashCommand='rm ~/code/data/*'
-        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-        output, error = process.communicate()       
+#         bashCommand='rm ~/code/data/*'
+#         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+#         output, error = process.communicate()       
         
         return output
     
-    def get_datasets(self,dataset_name):
-        r = requests.get('http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data?op=LISTSTATUS')
+    def get_datasets(self):
+        r = requests.get('http://54.186.225.72:50070/webhdfs/v1/data?op=LISTSTATUS')
 
         name_list=[]
         for v in r.json()['FileStatuses']['FileStatus']:
-            if(v['type']=="FILE"):
-                print v['pathSuffix']
+            if(v['type']=="DIRECTORY"):
+                #print v['pathSuffix']
                 name_list.append(v['pathSuffix'])
         return name_list
 
