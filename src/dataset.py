@@ -30,10 +30,21 @@ class datasets:
                 #print v['pathSuffix']
                 name_list.append(v['pathSuffix'])
         return name_list
+    
+    def get_datasetsFirstFilename(self,dataset_name):
+        url='http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data?op=LISTSTATUS'
+        r = requests.get(url)
+        print r.json()
+        name_list=[]
+        for v in r.json()['FileStatuses']['FileStatus']:
+            if(v['type']=="FILE"):
+                print v['pathSuffix']
+                name_list.append(v['pathSuffix'])
+        return name_list
 
 
     def get_columns(self,dataset_name):
-        dataset_files=datasets.get_datasets(self, dataset_name)
+        dataset_files=datasets.get_datasetsFirstFilename(self, dataset_name)
         print (dataset_files[0])
         
         bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/"+dataset_files[0]+" | awk 'NR==1'"
