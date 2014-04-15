@@ -74,27 +74,100 @@
 		});
 		</script>
 		</script>
-        
+        	
         <div id="upload" style="text-align:center;"> 
 <!--		<div id="dragdrophandler">Drag and Drop your datasets HERE!</div>-->
-    <form id="form1" enctype="multipart/form-data" method="post" action="/upload">
-	    <input id="data" type="file" name="data" multiple class="btn btn-default" style="margin: 10px 0 10px 420px"/>   
+    <form id="form1" enctype="multipart/form-data" method="post" action="/upload/train">
+	    <label>Upload Training File</label>
+	    <input id="TrainingFile" type="file" name="data" multiple class="btn btn-default" style="margin: 10px 0 10px 420px"/>
+	    <input type="text" id="category" name="category" />
+        <input type="submit" class="btn btn-primary btn-default" id="btnupload" role="button" value="Upload Your Dataset" style="margin: 10px 0 10px 0px" /> 
+	</form>
+	<form id="form2" enctype="multipart/form-data" method="post" action="/upload/test">
+	    <label>Upload Testing File</label>
+	    <input id="TestingFile" type="file" name="data" multiple class="btn btn-default" style="margin: 10px 0 10px 420px"/>   
         <input type="text" id="category" name="category" />
         <input type="submit" class="btn btn-primary btn-default" id="btnupload" role="button" value="Upload Your Dataset" style="margin: 10px 0 10px 0px" /> 
 	</form>
+	
     
         <div id="progbar" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
 		  <div class="progress-bar progress-bar-success" style="width:0%"></div>
 		</div>
         <div>
         <div id="msg"><h1>{{msg}}</h1></div>
-        <p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.
-        	<div id="showDatasets">
-            </div>
+    
         </div>
         
       </div>
       
+      </div><hr>
+    
+<div class="container">
+       <center><h2 id="classify">Algorithm</h2></center>
+	   <script>
+    	    $( "#classify" ).click(function() {
+				$("#selclassify").fadeToggle("fast","swing",function() {
+		  });
+		});
+		
+		function showDiv(btnId)
+		{
+			HideDiv();
+			
+			if(btnId=='btnTrain')
+			{
+				$('#resultColumnsTrain').show();
+			}
+			else if(btnId=='btnRF')
+			{
+				$('#resultColumnsRF').show();
+			}
+			
+		}
+		
+		function HideDiv()
+		{
+			$('#resultColumnsRF').hide();
+			$('#resultColumnsTrain').hide();
+		}
+        </script>
+        
+        <div id="selclassify" style="text-align:center;display:none">
+        <p>
+		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
+		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
+		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.
+        	<div id="showDatasets">
+            </div>
+		</p>
+		<!-- New code - Adding resultColumns div -->
+		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
+			<div id="showColsTr">
+				Get Columns with dataset value -- train logistics
+			</div>
+			<form id="postColumns" method="post" action="/run_algorithms/train">
+			<input type="hidden" id="datasetname" name="datasetname" />
+			<label>Predictor</label>
+			<input type="text" id="predictor" name="predictor" />
+			<label>Target</label>
+			<input type="text" id="target" name="target" /><br/>
+			<input type="submit">
+			</form>
+		</div>
+		
+		<div id="resultColumnsRF" class="container" align="center" style="display:none">
+			<div id="showColsRF">
+				Get Columns with dataset value -- random forest
+			</div>
+			<form id="postColumns" method="post" action="/run_algorithms/random">
+			
+			<input type="submit">
+			</form>
+		</div>
+      
+		
+      </div>
       </div><hr>
     
        <div class="container">
@@ -107,22 +180,8 @@
         <div id="selcols" style="text-align:center;display:none">
         <p><input type="submit" class="btn btn-primary btn-default" role="button" value="Select Columns"></p>
       </div>
-      </div><hr>
-
-      <div class="container">
-       <center><h2 id="classify">Algorithm</h2></center>
-	   <script>
-    	    $( "#classify" ).click(function() {
-				$("#selclassify").fadeToggle("fast","swing",function() {
-		  });
-		});
-        </script>
-        
-        <div id="selclassify" style="text-align:center;display:none">
-        <p><input type="submit" class="btn btn-primary btn-default" role="button" value="Select Classification Algorithm" /></p>
-      </div>
-      </div><hr>
-
+	  
+	  </div><hr>
       <footer>
       <div class="modal-footer">
       <div class="col-lg-4">
