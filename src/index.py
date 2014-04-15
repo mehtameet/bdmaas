@@ -96,7 +96,7 @@ def get_columns(name):
         $('#datasetname').val("'''+name+'''");
         </script>'''+result 
 
-@route('/run_algorithms/<name>',method='POST')
+@route('/run_algorithms/<name>',method='GET')
 def run_algorithms(name):
     predictor = request.forms.predictor
     target = request.forms.target
