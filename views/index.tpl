@@ -174,7 +174,7 @@
        <center><h2 id="sel">Columns</h2></center>
 	   
         <div id="selcols" style="text-align:center;">
-        <p><input type="submit" class="btn btn-primary btn-default" role="button" value="Select Columns"></p>
+        
       </div>
 	  
 	  </div><hr>
