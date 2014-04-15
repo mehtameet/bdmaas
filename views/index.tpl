@@ -172,12 +172,8 @@
     
        <div class="container">
        <center><h2 id="sel">Columns</h2></center>
-	   <script>
-    	    $( "#sel" ).click(function() {
-				$("#selcols").fadeToggle("fast","swing",function() {
-		  });
-		});</script>
-        <div id="selcols" style="text-align:center;display:none">
+	   
+        <div id="selcols" style="text-align:center;">
         <p><input type="submit" class="btn btn-primary btn-default" role="button" value="Select Columns"></p>
       </div>
 	  

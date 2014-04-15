@@ -10,8 +10,8 @@ def home():
     TEMPLATE_PATH.insert(0,"../views")
     return template('index.tpl', msg="")
 
-@route('/upload', method='POST')
-def do_upload():
+@route('/upload/<dataType>', method='POST')
+def do_upload(dataType):
     TEMPLATE_PATH.insert(0,"../views")
     category = request.forms.category
     upload = request.files.data
@@ -21,7 +21,10 @@ def do_upload():
     
     print "Directory: %s \nFilename: %s\nSize: %d bytes." %(category, filename, len(raw))
     
-    save_path = "../data/{category}/data".format(category=category)
+    if(dataType=="train"):
+        save_path = "../data/{category}/data/train".format(category=category)
+    else:
+        save_path = "../data/{category}/data/test".format(category=category)
     
     if not os.path.exists(save_path):
         os.makedirs(save_path)
@@ -34,7 +37,8 @@ def do_upload():
 
     msg="file is uploaded"
     
-    datasetObj.upload(category)
+    if(dataType=="test"):
+        datasetObj.upload(category)
     
     return template('index.tpl', msg=msg)
 
@@ -49,7 +53,7 @@ def get_datasets():
         <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
         var header_link = $('.showDatasets');
-
+        $('#datasetname').val();
         header_link.bind('mousedown', function () {
             console.log($(this).find('a').text());
             var temp_dataset_name=$(this).find('a').text();
@@ -80,10 +84,15 @@ def get_columns(name):
 #         
 #         ''' + name
     print column_names
-    result=""
+    result='<div id="selcols">'
     for columns in column_names:
-        result+=columns
-    return '<div id=selcols>'+result+'</div>' 
+        result+='<li>'+columns+"</li>"
+    result+='<div>'
+    return '''
+        <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+        <script>
+        $('#datasetname').val("'''+name+'''");
+        </script>'''+result 
 
 @route('/hello/<name>')
 def index(name):
