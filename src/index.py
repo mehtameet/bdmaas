@@ -94,6 +94,16 @@ def get_columns(name):
         $('#datasetname').val("'''+name+'''");
         </script>'''+result 
 
+@route('/run_algorithms/<name>',method='POST')
+def run_algorithms(name):
+    predictor = request.forms.predictor
+    target = request.forms.target
+    datasetname = request.forms.datasetname
+    print predictor
+    print target
+    print datasetname
+
+
 @route('/hello/<name>')
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)

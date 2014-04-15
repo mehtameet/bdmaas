@@ -32,7 +32,7 @@ class datasets:
         return name_list
     
     def get_datasetsFirstFilename(self,dataset_name):
-        url='http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data?op=LISTSTATUS'
+        url='http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data/train?op=LISTSTATUS'
         r = requests.get(url)
         print r.json()
         name_list=[]
@@ -47,7 +47,7 @@ class datasets:
         dataset_files=datasets.get_datasetsFirstFilename(self, dataset_name)
         print (dataset_files[0])
         
-        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/"+dataset_files[0]+" | awk 'NR==1'"
+        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/train/"+dataset_files[0]+" | awk 'NR==1'"
         
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
