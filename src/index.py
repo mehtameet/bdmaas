@@ -3,6 +3,8 @@ import os
 from dataset import datasets
 datasetObj=datasets()
 
+from algorithms import algorithms
+algorithmObj=algorithms()
 
 TEMPLATES.clear()
 @route('/')
@@ -102,6 +104,12 @@ def run_algorithms(name):
     print predictor
     print target
     print datasetname
+    print name
+    
+    if(name=="train"):
+        algorithmObj.trainlogistic(datasetname, predictor.split(','), target)
+        return algorithmObj.runlogistic(datasetname)
+    
 
 
 @route('/hello/<name>')

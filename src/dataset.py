@@ -41,6 +41,17 @@ class datasets:
                 print v['pathSuffix']
                 name_list.append(v['pathSuffix'])
         return name_list
+    
+    def get_datasetsFirstFilenametest(self,dataset_name):
+        url='http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data/test?op=LISTSTATUS'
+        r = requests.get(url)
+        print r.json()
+        name_list=[]
+        for v in r.json()['FileStatuses']['FileStatus']:
+            if(v['type']=="FILE"):
+                print v['pathSuffix']
+                name_list.append(v['pathSuffix'])
+        return name_list
 
 
     def get_columns(self,dataset_name):
