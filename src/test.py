@@ -18,3 +18,4 @@ from algorithms import algorithms
 algorithmObj=algorithms()
 
 algorithmObj.trainlogistic("contract1", ["seller_company_name","customer_company_name"], "point_of_delivery_specific_location")
+algorithmObj.runlogistic("contract1")
