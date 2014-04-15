@@ -25,7 +25,7 @@ class algorithms:
     def runlogistic(self,dataset_name):
         datasetObj=datasets()
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
-        bashCommand="$MAHOUT_HOME/bin/mahout trainlogistic  --input ~/code/bdmaas/data/"+dataset_name+"/data/"+dataset_files[0]+"  --model ~/code/bdmaas/data/"+dataset_name+"/model --auc --confusion"
+        bashCommand="$MAHOUT_HOME/bin/mahout runlogistic  --input ~/code/bdmaas/data/"+dataset_name+"/data/"+dataset_files[0]+"  --model ~/code/bdmaas/data/"+dataset_name+"/model --auc --confusion"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is "+output)
