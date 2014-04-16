@@ -34,8 +34,8 @@ class algorithms:
     
     def trainrandomforest(self,dataset_name):
         
-        datasetObj=datasets()
-        dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
+        #datasetObj=datasets()
+        #dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         #bashCommand="$HADOOP_PREFIX/bin/hadoop jar SMAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/KDDTrain+.info -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L"
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar SMAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/KDDTrain+.arff -f /data/"+dataset_name+"/KDDTrain+.info -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
