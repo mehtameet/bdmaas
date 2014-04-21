@@ -14,8 +14,13 @@ datasetObj=datasets()
 # print innerhtml
 #print jsondata
 
-from algorithms import algorithms
-algorithmObj=algorithms()
+# from algorithms import algorithms
+# algorithmObj=algorithms()
+# 
+# algorithmObj.trainlogistic("contract1", ["seller_company_name","customer_company_name"], "point_of_delivery_specific_location")
+# algorithmObj.runlogistic("contract1")
 
-algorithmObj.trainlogistic("contract1", ["seller_company_name","customer_company_name"], "point_of_delivery_specific_location")
-algorithmObj.runlogistic("contract1")
+from fileFormatting import fileformatting
+fileformattingObj=fileformatting()
+fileformattingObj.format("contract6","train")
+fileformattingObj.format("contract6","test")

@@ -2,6 +2,10 @@ import subprocess
 import requests
 import json
 
+from fileFormatting import fileformatting
+fileformattingObj=fileformatting()
+
+
 class datasets:
     
     def upload(self,dataset_name):
@@ -11,7 +15,10 @@ class datasets:
         print ("output is "+output)
         print (error)
         
-        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/bdmaas/data/'+dataset_name+'/data/ /data/'+dataset_name+'/'
+        fileformattingObj.format(dataset_name,"train")
+        fileformattingObj.format(dataset_name,"test")
+                
+        bashCommand='$HADOOP_PREFIX/bin/hadoop fs -copyFromLocal ~/code/bdmaas/data/'+dataset_name+'/temp/data/ /data/'+dataset_name+'/'
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
 
