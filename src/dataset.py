@@ -75,7 +75,7 @@ class datasets:
 #         print column_names
 
         filename=fileformattingObj.getfirstfilename(dataset_name)
-        f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type+"/"+filename)
+        f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
         line=f.readline();
         return line.split(",")
         
