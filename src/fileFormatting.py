@@ -28,3 +28,15 @@ class fileformatting:
                 f1.write(data[j])
         f1.close()
         f.close()
+        
+    def fetchColumnNumber(self,dataset_name,column_name):
+        filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type)[0]
+        f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type+"/"+filename)
+        line=f.readline()
+        columns=line.split(",")
+        for i in range(0,len(columns)):
+            if(column_name==columns[i]):
+                print "column number is "+ str(i+1)
+                return i+1
+                break;
+                

@@ -22,5 +22,6 @@ datasetObj=datasets()
 
 from fileFormatting import fileformatting
 fileformattingObj=fileformatting()
-fileformattingObj.format("contract6","train")
-fileformattingObj.format("contract6","test")
+# fileformattingObj.format("contract6","train")
+# fileformattingObj.format("contract6","test")
+fileformattingObj.fetchColumnNumber("contract7", "customer_duns_number")
