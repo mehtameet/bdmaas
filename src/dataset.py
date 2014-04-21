@@ -62,17 +62,21 @@ class datasets:
 
 
     def get_columns(self,dataset_name):
-        dataset_files=datasets.get_datasetsFirstFilename(self, dataset_name)
-        print (dataset_files[0])
-        
-        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/train/"+dataset_files[0]+" | awk 'NR==1'"
-        
-        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-        output, error = process.communicate()
-        #print ("output is "+output)
-        original_line=output.split("\n")
-        column_names=original_line[0].replace("\r","").split(",")
-        print column_names
-        return column_names
+#         dataset_files=datasets.get_datasetsFirstFilename(self, dataset_name)
+#         print (dataset_files[0])
+#         
+#         bashCommand="$HADOOP_PREFIX/bin/hadoop fs -cat /data/"+dataset_name+"/data/train/"+dataset_files[0]+" | awk 'NR==1'"
+#         
+#         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+#         output, error = process.communicate()
+#         #print ("output is "+output)
+#         original_line=output.split("\n")
+#         column_names=original_line[0].replace("\r","").split(",")
+#         print column_names
+
+        filename=fileformattingObj.getfirstfilename(dataset_name)
+        f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type+"/"+filename)
+        line=f.readline();
+        return line.split(",")
         
     

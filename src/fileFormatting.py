@@ -5,7 +5,7 @@ class fileformatting:
     def getfirstfilename(self,dataset_name):
 #         for files in os.listdir("/home/meet/workspace/bdmaas/data/"+dataset_name):
 #             print files 
-        print (os.listdir("/home/meet/workspace/bdmaas/data/"+dataset_name)[0])
+        return (os.listdir("/home/meet/workspace/bdmaas/data/"+dataset_name)[0])
         
     def format(self,dataset_name,type):
         filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type)[0]
@@ -24,7 +24,6 @@ class fileformatting:
             j=0;
             for j in range(0,len(data)):
                 if (j%2!=0):
-                    print data[j]
                     data[j]=data[j].replace(",","")
                 f1.write(data[j])
         f1.close()
