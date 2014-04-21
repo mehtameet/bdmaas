@@ -30,7 +30,7 @@ class fileformatting:
         f.close()
         
     def fetchColumnNumber(self,dataset_name,column_name):
-        filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type)[0]
+        filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train")[0]
         f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type+"/"+filename)
         line=f.readline()
         columns=line.split(",")
