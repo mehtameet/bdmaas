@@ -85,7 +85,8 @@ def get_columns(name):
 #         </script>
 #         
 #         ''' + name
-    print "inside dataset.py "+column_names
+    print "inside index.py"
+    print column_names
     result='<div id="selcols">'
     for columns in column_names:
         result+='<li>'+columns+"</li>"
