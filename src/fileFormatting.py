@@ -2,10 +2,10 @@ import os
 
 class fileformatting:
     
-    def getfirstfilename(self,dataset_name,type):
+    def getfirstfilename(self,dataset_name):
 #         for files in os.listdir("/home/meet/workspace/bdmaas/data/"+dataset_name):
 #             print files 
-        return os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type)[0]
+        return os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train")[0]
         
     def format(self,dataset_name,type):
         filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/"+type)[0]
