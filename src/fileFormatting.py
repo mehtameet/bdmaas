@@ -46,7 +46,7 @@ class fileformatting:
         f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
         line=f.readline()
         columns=line.split(",")
-        print "total no. of columns is "+(len(columns))
+        print "total no. of columns is "+str(len(columns))
         return len(columns)+1
     
     def randomForestLabelString(self,dataset_name,predictor,target):
