@@ -177,7 +177,7 @@
        <div class="container">
        <center><h2 id="sel">Columns</h2></center>
 	   
-        <div id="selcols" style="text-align:center;overflow-y: scroll; height:400px;">
+        <div id="selcols" style="text-align:center; overflow-y: scroll; height:300px;">
         
       </div>
 	  
