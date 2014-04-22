@@ -46,6 +46,7 @@ class fileformatting:
         f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
         line=f.readline()
         columns=line.split(",")
+        print "total no. of columns is "+(len(columns))
         return len(columns)+1
     
     def randomForestLabelString(self,dataset_name,predictor,target):
@@ -53,10 +54,10 @@ class fileformatting:
         labelNumber=fileformatting.fetchColumnNumber(self, dataset_name, target)
         randomforeststring=""
         for i in range(1,fileformatting.fetchTotalRowNumber(self, dataset_name)):
-            if (i!=categoryNumber) or (i!=labelNumber):
-                randomforeststring+=" I"
-            elif (i==categoryNumber):
+            if (i==categoryNumber):
                 randomforeststring+=" C"
-            else:
+            elif (i==labelNumber):
                 randomforeststring+=" L"
+            else:
+                randomforeststring+=" I"
         return randomforeststring
