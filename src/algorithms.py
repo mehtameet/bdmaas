@@ -44,7 +44,7 @@ class algorithms:
         predictor=predictors.split(",")
         randomForestLabelString=fileformattingObj.randomForestLabelString(dataset_name, predictor[0], target)
         dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
-        bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/train/"+dataset_files[0]+".info -d "+randomForestLabelString
+        bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -d "+randomForestLabelString
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is of trainrandomforest" +output)
@@ -70,7 +70,7 @@ class algorithms:
 
         
         dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
-        bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -ds /data/"+dataset_name+"/train/"+dataset_files[0]+".info -sl 5 -p -t 100 -o nsl-forest"
+        bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -ds /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -sl 5 -p -t 100 -o nsl-forest"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is testrandomforest" +output)
@@ -81,7 +81,7 @@ class algorithms:
         
         datasetObj=datasets()
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
-        bashCommand="$$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -s /data/"+dataset_name+"/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
+        bashCommand="$$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -s /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is runrandomforest" +output)
