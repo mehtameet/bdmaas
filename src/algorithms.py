@@ -81,7 +81,7 @@ class algorithms:
         
         datasetObj=datasets()
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
-        bashCommand="$$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -s /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
+        bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_files[0]+" -s /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is runrandomforest" +output)
