@@ -108,6 +108,8 @@ def get_columns(name):
         <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
         $('#datasetname').val("'''+name+'''");
+        $('#datasetname1').val("'''+name+'''");
+        $('#datasetname2').val("'''+name+'''");
         </script>'''+result 
 
 @route('/run_algorithms/<name>',method='POST')
