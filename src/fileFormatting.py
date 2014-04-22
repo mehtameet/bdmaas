@@ -29,6 +29,7 @@ class fileformatting:
         f1.close()
         f.close()
         
+    #@staticmethod    
     def fetchColumnNumber(self,dataset_name,column_name):
         filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train")[0]
         f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
@@ -39,4 +40,23 @@ class fileformatting:
                 print "column number is "+ str(i+1)
                 return i+1
                 break;
-                
+    
+    def fetchTotalRowNumber(self,dataset_name):
+        filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train")[0]
+        f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
+        line=f.readline()
+        columns=line.split(",")
+        return len(columns)+1
+    
+    def randomForestLabelString(self,dataset_name,predictor,target):
+        categoryNumber=fileformatting.fetchColumnNumber(self, dataset_name, predictor)
+        labelNumber=fileformatting.fetchColumnNumber(self, dataset_name, target)
+        randomforeststring=""
+        for i in range(1,fileformatting.fetchTotalRowNumber(self, dataset_name)):
+            if (i!=categoryNumber) or (i!=labelNumber):
+                randomforeststring+=" I"
+            elif (i==categoryNumber):
+                randomforeststring+=" C"
+            else:
+                randomforeststring+=" L"
+        return randomforeststring
