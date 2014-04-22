@@ -101,15 +101,19 @@ def get_columns(name):
 def run_algorithms(name):
     predictor = request.forms.predictor
     target = request.forms.target
-    datasetname = request.forms.datasetname
+    dataset_name = request.forms.datasetname
     print predictor
     print target
-    print datasetname
+    print dataset_name
     print name
     
     if(name=="train"):
-        algorithmObj.trainlogistic(datasetname, predictor.split(','), target)
-        return algorithmObj.runlogistic(datasetname)
+        algorithmObj.trainlogistic(dataset_name, predictor.split(','), target)
+        return algorithmObj.runlogistic(dataset_name)
+    else:
+        algorithmObj.trainrandomforest(dataset_name, predictor.split(','), target)
+        algorithmObj.testrandomforest(dataset_name)
+        return algorithmObj.runrandomforest(dataset_name)
     
 
 
