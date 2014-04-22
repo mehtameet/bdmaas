@@ -147,7 +147,7 @@
 				Get Columns with dataset value -- train logistics
 			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/train">
-			<input type="hidden" id="datasetname" name="datasetname" />
+			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
 			<label>Target</label>
@@ -161,7 +161,7 @@
 				Get Columns with dataset value -- random forest
 			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/random">
-			<input type="hidden" id="datasetname" name="datasetname" />
+			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
 			<label>Target</label>

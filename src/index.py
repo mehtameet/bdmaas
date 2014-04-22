@@ -55,7 +55,7 @@ def get_datasets():
         <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
         var header_link = $('.showDatasets');
-        $('#datasetname').val();
+        $('#datasetname1').val();
         header_link.bind('mousedown', function () {
             console.log($(this).find('a').text());
             var temp_dataset_name=$(this).find('a').text();
@@ -64,7 +64,20 @@ def get_datasets():
                     $(\'#showColsTr\').html(data)
                     });
         });
-        </script>'''+innerHtml
+        </script>
+		<script>
+        var header_link = $('.showDatasets');
+        $('#datasetname2').val();
+        header_link.bind('mousedown', function () {
+            console.log($(this).find('a').text());
+            var temp_dataset_name=$(this).find('a').text();
+            console.log(temp_dataset_name);
+            $.get(\'/get_columns/\'+temp_dataset_name,function(data){
+                    $(\'#showColsTr\').html(data)
+                    });
+        });
+        </script>
+		'''+innerHtml
     
 @route('/get_columns/<name>')
 def get_columns(name):
