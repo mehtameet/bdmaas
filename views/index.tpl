@@ -161,7 +161,11 @@
 				Get Columns with dataset value -- random forest
 			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/random">
-			
+			<input type="hidden" id="datasetname" name="datasetname" />
+			<label>Predictor</label>
+			<input type="text" id="predictor" name="predictor" />
+			<label>Target</label>
+			<input type="text" id="target" name="target" /><br/>
 			<input type="submit">
 			</form>
 		</div>
