@@ -73,7 +73,7 @@ def get_datasets():
             var temp_dataset_name=$(this).find('a').text();
             console.log(temp_dataset_name);
             $.get(\'/get_columns/\'+temp_dataset_name,function(data){
-                    $(\'#showColsTr\').html(data)
+                    $(\'#showColsRF\').html(data)
                     });
         });
         </script>
