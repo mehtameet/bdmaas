@@ -44,6 +44,7 @@ class algorithms:
         #predictor=predictors.split(",")
         randomForestLabelString=fileformattingObj.randomForestLabelString(dataset_name, predictor[0], target)
         dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
+        print "randomForestLabelString is : "+randomForestLabelString
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -d "+randomForestLabelString
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
