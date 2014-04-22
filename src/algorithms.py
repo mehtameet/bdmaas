@@ -43,7 +43,7 @@ class algorithms:
         #bashCommand="$HADOOP_PREFIX/bin/hadoop jar SMAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/KDDTrain+.info -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L"
         #predictor=predictors.split(",")
         randomForestLabelString=fileformattingObj.randomForestLabelString(dataset_name, predictor[0], target)
-        dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
+        dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         print "randomForestLabelString is : "+randomForestLabelString
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -d "+randomForestLabelString
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -71,7 +71,7 @@ class algorithms:
         print (error)
 
         
-        dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
+        dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d /data/"+dataset_name+"/data/test/"+dataset_filestest[0]+" -ds /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -sl 5 -p -t 100 -o nsl-forest"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
@@ -83,6 +83,7 @@ class algorithms:
         
         datasetObj=datasets()
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
+        dataset_filestest=datasetObj.get_datasetsFirstFilenametest(dataset_name)
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_filestest[0]+" -ds /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
