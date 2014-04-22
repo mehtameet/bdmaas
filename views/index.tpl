@@ -138,7 +138,7 @@
 		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
 		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.
-        	<div id="showDatasets" style="overflow-y: scroll; height:400px;">
+        	<div id="showDatasets" style="overflow-y: scroll; height:300px;">
             </div>
 		</p>
 		<!-- New code - Adding resultColumns div -->
@@ -177,7 +177,7 @@
        <div class="container">
        <center><h2 id="sel">Columns</h2></center>
 	   
-        <div id="selcols" style="text-align:center;">
+        <div id="selcols" style="text-align:center;overflow-y: scroll; height:400px;">
         
       </div>
 	  
