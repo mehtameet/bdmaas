@@ -35,13 +35,13 @@ class algorithms:
         print (error)
         return output
     
-    def trainrandomforest(self,dataset_name,predictors,target):
+    def trainrandomforest(self,dataset_name,predictor,target):
         
         #Commented for initial testing
         #datasetObj=datasets()
         #dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         #bashCommand="$HADOOP_PREFIX/bin/hadoop jar SMAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/KDDTrain+.info -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L"
-        predictor=predictors.split(",")
+        #predictor=predictors.split(",")
         randomForestLabelString=fileformattingObj.randomForestLabelString(dataset_name, predictor[0], target)
         dataset_files=datasetObj.get_datasetsFirstFilenametest(dataset_name)
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -d "+randomForestLabelString
