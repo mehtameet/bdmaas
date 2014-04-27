@@ -222,8 +222,7 @@
       </div><hr>
 	  
       <footer class="navbar-fixed-bottom navbar-inverse">
-      <h5>About Us</h5>
-      <p>&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
+      <p style="color: #FFFFFF">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 
