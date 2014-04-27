@@ -144,7 +144,7 @@
 		
 		<!-- New code - Adding resultColumns div -->
 		<script>
-		$('form.postColumns').on('submit', function() {
+		$('form.finalProc').on('submit', function() {
 			console.log('trigger');
 			return false;
 		});
@@ -154,7 +154,7 @@
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form id="postColumns" method="post" action="/run_algorithms/train" class="postColumns">
+			<form id="postColumns" method="post" action="/run_algorithms/train" class="finalProc">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
@@ -164,11 +164,11 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="container" align="center" style="display:none" class="postColumns">
+		<div id="resultColumnsRF" class="container" align="center" style="display:none">
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
-			<form id="postColumns" method="post" action="/run_algorithms/random">
+			<form id="postColumns" method="post" action="/run_algorithms/random" class="finalProc">
 			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
