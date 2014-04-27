@@ -18,7 +18,7 @@ def do_upload(dataType):
     category = request.forms.category
     upload = request.files.data
     print category
-    raw = upload.file.read() # This is dangerous for big files
+    raw = upload.file.read()
     filename = upload.filename
     
     print "Directory: %s \nFilename: %s\nSize: %d bytes." %(category, filename, len(raw))

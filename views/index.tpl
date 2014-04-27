@@ -141,12 +141,20 @@
         	<div id="showDatasets" style="overflow-y: auto; height:300px;">
             </div>
 		</p>
+		
 		<!-- New code - Adding resultColumns div -->
+		<script>
+		$('form.postColumns').on('submit', function() {
+			console.log('trigger');
+			return false;
+		});
+		</script>
+		
 		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form id="postColumns" method="post" action="/run_algorithms/train">
+			<form id="postColumns" method="post" action="/run_algorithms/train" class="postColumns">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
@@ -156,7 +164,7 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="container" align="center" style="display:none">
+		<div id="resultColumnsRF" class="container" align="center" style="display:none" class="postColumns">
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
@@ -173,26 +181,10 @@
 		
       </div>
       </div><hr>
-    
-       <div class="container">
-       <center><h2 id="sel">Columns</h2></center>
-	   
-        <div id="selcols" style="text-align:center;">
-        
-      </div>
 	  
-	  </div><hr>
-      <footer>
-      <div class="modal-footer">
-      <div class="col-lg-4">
+      <footer class="navbar-fixed-bottom navbar-inverse col-lg-4">
       <h5>About Us</h5>
-      <p style="font-weight:bold;margin-bottom:0px">Team Members</p><br>
-      <p>Kuntal Shah<br/>
-      Meet Mehta<br/>
-      Neel Anand<br/></p>
-      </div>
-      </div>
-        <p>&copy; Company 2014</p>
+      <p>&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 
