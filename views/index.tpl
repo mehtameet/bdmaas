@@ -144,6 +144,7 @@
 		
 		<!-- New code - Adding resultColumns div -->
 		<script>
+		$(document).ready(function() {
 		$('form.finalProc').on('submit', function() {
 			var that = $(this),
 			url = that.attr('action'),
@@ -151,10 +152,24 @@
 			data = {};
 			
 		that.find('[predictor]').each(function(index, value){
-			console.log(value);
+			var that = $(this),
+				name = that.attr('predictor'),
+				value = that.val();
+				
+			data[predictor] = value;
 		});
 		
+		$.ajax{(
+			url: url,
+			type: type,
+			data: data,
+			success: function(response){
+				console.log(response);
+			}
+			});
+		
 		return false;
+		});
 		});
 		</script>
 		
