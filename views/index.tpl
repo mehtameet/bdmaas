@@ -161,7 +161,7 @@
 		
 		$.ajax({
 			url: url,
-			type: type,
+			type: method,
 			data: data,
 			success: function(response){
 				console.log(response);
