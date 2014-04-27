@@ -145,8 +145,16 @@
 		<!-- New code - Adding resultColumns div -->
 		<script>
 		$('form.finalProc').on('submit', function() {
-			console.log('trigger');
-			return false;
+			var that = $(this),
+			url = that.attr('action'),
+			method = that.attr('method'),
+			data = {};
+			
+		that.find('[predictor]').each(function(index, value){
+			console.log(value);
+		});
+		
+		return false;
 		});
 		</script>
 		
