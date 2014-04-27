@@ -167,12 +167,12 @@
 				data[target] = value;				
 			});
 			
-			that.find('[datasetname]').each(function(index, value){
+			that.find('[datasetname1]').each(function(index, value){
 				var that = $(this),
-					name = that.attr('datasetname'),
+					name = that.attr('datasetname1'),
 					value = that.val();
 				
-				data[datasetname] = value;				
+				data[datasetname1] = value;				
 			});
 		
 		$.ajax({
