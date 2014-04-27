@@ -194,7 +194,7 @@
 				Get Columns with dataset value -- train logistics
 			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/train" class="finalProc">
-			<input type="hidden" id="datasetname1" name="datasetname" />
+			<input type="hidden" id="datasetname1" name="datasetname1" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
 			<label>Target</label>
