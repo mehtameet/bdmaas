@@ -130,8 +130,6 @@ def run_algorithms(name):
         algorithmObj.testrandomforest(dataset_name)
         return algorithmObj.runrandomforest(dataset_name)
     
-
-
 @route('/hello/<name>')
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)

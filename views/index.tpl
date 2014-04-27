@@ -156,8 +156,24 @@
 					name = that.attr('predictor'),
 					value = that.val();
 				
-				data[predictor] = value;
-		});
+				data[predictor] = value;				
+			});
+			
+			that.find('[target]').each(function(index, value){
+				var that = $(this),
+					name = that.attr('target'),
+					value = that.val();
+				
+				data[target] = value;				
+			});
+			
+			that.find('[datasetname]').each(function(index, value){
+				var that = $(this),
+					name = that.attr('datasetname'),
+					value = that.val();
+				
+				data[datasetname] = value;				
+			});
 		
 		$.ajax({
 			url: url,
