@@ -145,28 +145,28 @@
 		<!-- New code - Adding resultColumns div -->
 		<script>
 		$(document).ready(function() {
-		$('form.finalProc').on('submit', function() {
-			var that = $(this),
-			url = that.attr('action'),
-			method = that.attr('method'),
-			data = {};
+			$('form.finalProc').on('submit', function() {
+				var that = $(this),
+				url = that.attr('action'),
+				method = that.attr('method'),
+				data = {};
 			
-		that.find('[predictor]').each(function(index, value){
-			var that = $(this),
-				name = that.attr('predictor'),
-				value = that.val();
+			that.find('[predictor]').each(function(index, value){
+				var that = $(this),
+					name = that.attr('predictor'),
+					value = that.val();
 				
-			data[predictor] = value;
+				data[predictor] = value;
 		});
 		
-		$.ajax{(
+		$.ajax({
 			url: url,
 			type: type,
 			data: data,
 			success: function(response){
 				console.log(response);
 			}
-			});
+		});
 		
 		return false;
 		});
