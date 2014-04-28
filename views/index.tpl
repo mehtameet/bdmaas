@@ -129,7 +129,7 @@
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
 		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.</p>
         	
-			<div class="panel panel-default cols-lg-4">
+			<div class="panel panel-default col-lg-4">
 				<div class="panel-heading">
 					<h3 class="panel-title">Datasets</h3>
 				</div>
