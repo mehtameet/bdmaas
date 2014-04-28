@@ -111,8 +111,8 @@ def get_columns(name):
     for columns in column_names:
         result+='<li>'+columns+"</li>"
     result+='</div></div>'
-    
-	return result
+    return result
+	
 	#return '''
      #   <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
       #  <script>
