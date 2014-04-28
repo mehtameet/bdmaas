@@ -105,7 +105,7 @@ def get_columns(name):
 				<div class="panel-heading">
 					<h3 class="panel-title">Columns</h3>
 				</div>
-				<div id="selcols" style="text-align:center; overflow-y: auto; height:200px;">
+				<div id="showingCols" style="text-align:center; overflow-y: auto; height:200px;">
 				</div>
 			</div>
 	'''

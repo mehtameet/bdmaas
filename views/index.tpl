@@ -102,9 +102,27 @@
 		  });
 		});
 		
+		function showDiv(btnId)
+		{
+			HideDiv();
+			if(btnId=='btnTrain')
+			{
+				$('#resultColumnsTrain').show();
+			}
+			else if(btnId=='btnRF')
+			{
+				$('#resultColumnsRF').show();
+			}
+		}
+		
+		function HideDiv()
+		{
+			$('#resultColumnsRF').hide();
+			$('#resultColumnsTrain').hide();
+		}
         </script>
         
-        <div id="selclassify" style="text-align:center;">
+        <div id="selclassify" style="text-align:center;display:none">
         <p>
 		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
@@ -145,7 +163,7 @@
 		
 
 		
-		<div id="resultColumnsTrain" class="container" align="center">
+		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
@@ -159,7 +177,7 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="container" align="center">
+		<div id="resultColumnsRF" class="container" align="center" style="display:none">
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
