@@ -90,15 +90,7 @@
         <input type="submit" class="btn btn-primary btn-default" id="btnupload" role="button" value="Upload Your Dataset" style="margin: 10px 0 10px 0px" /> 
 	</form>
 	
-    
-        <div id="progbar" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-		  <div class="progress-bar progress-bar-success" style="width:0%"></div>
-		</div>
-        <div>
-        <div id="msg"><h1>{{msg}}</h1></div>
-    
-        </div>
-        
+        <div id="msg"><h1>{{msg}}</h1></div>    
       </div>
       
       </div><hr>
@@ -114,7 +106,6 @@
 		function showDiv(btnId)
 		{
 			HideDiv();
-			
 			if(btnId=='btnTrain')
 			{
 				$('#resultColumnsTrain').show();
@@ -123,7 +114,6 @@
 			{
 				$('#resultColumnsRF').show();
 			}
-			
 		}
 		
 		function HideDiv()
@@ -196,8 +186,8 @@
 	  
 	  <div id="result"
 	  
-      <footer class="navbar-fixed-bottom navbar-inverse">
-      <p style="color: #FFFFFF">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
+      <footer class="navbar-static-bottom navbar-inverse">
+      <p style="color: #FFFFFF; align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 
