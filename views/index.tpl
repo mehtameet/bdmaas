@@ -154,8 +154,12 @@
 		});
 		</script>
 		
-		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
+
 		
+		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
+			<div id="showColsTr">
+				Get Columns with dataset value -- train logistics
+			</div>
 			<form name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
@@ -167,7 +171,9 @@
 		</div>
 		
 		<div id="resultColumnsRF" class="container" align="center" style="display:none">
-			
+			<div id="showColsRF">
+				Get Columns with dataset value -- random forest
+			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/random" class="finalProc">
 			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
@@ -183,7 +189,7 @@
 	  <div id="result"
 	  
       <footer class="navbar-static-bottom navbar-inverse">
-      <p style="color: #FFFFFF">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
+      <p style="color: #FFFFFF; align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 
