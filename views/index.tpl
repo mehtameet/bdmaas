@@ -148,8 +148,9 @@
 		var predictor = $('#predictor').val();
 		var target = $('#target').val();
 		var datasetname = $('#datasetname1').val();
-		$.post('/run_algorithms/train', {predictor: predictor, target: target, datasetname: datasetname1 }, function(data) {
+		$.post('/run_algorithms/train', {predictor: predictor, target: target, datasetname: datasetname }, function(data) {
 			$('#result').html(data);
+			console.log(datasetname);
 		});
 		});
 		</script>
@@ -159,7 +160,7 @@
 				Get Columns with dataset value -- train logistics
 			</div>
 			<form id="postColumns" method="post" action="/run_algorithms/train" class="finalProc">
-			<input type="hidden" id="datasetname1" name="datasetname1" />
+			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
 			<label>Target</label>
