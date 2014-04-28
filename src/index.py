@@ -100,7 +100,15 @@ def get_columns(name):
 #         ''' + name
     print "inside index.py"
     print column_names
-    result='<div class="panel panel-default col-lg-4" align="center"><div class="panel-heading"><h3 class="panel-title">Columns</h3></div><div id="selcols" style="text-align:center; overflow-y: auto; height:200px;"></div></div>'
+    result='''
+			<div class="panel panel-default col-lg-4" align="center">
+				<div class="panel-heading">
+					<h3 class="panel-title">Columns</h3>
+				</div>
+				<div id="selcols" style="text-align:center; overflow-y: auto; height:200px;">
+				</div>
+			</div>
+	'''
     for columns in column_names:
         result+='<li>'+columns+"</li>"
     result+='</div>'
