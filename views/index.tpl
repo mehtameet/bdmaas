@@ -145,7 +145,7 @@
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form  class="panel-body" name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
+			<form class="panel-body" name="postColumns" id="postColumns" action="/run_algorithms/train" method="post">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" /><br/>
