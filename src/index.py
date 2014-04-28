@@ -101,6 +101,12 @@ def get_columns(name):
     print "inside index.py"
     print column_names
     result='''
+    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+        <script>
+        $('#datasetname').val("'''+name+'''");
+        $('#datasetname1').val("'''+name+'''");
+        $('#datasetname2').val("'''+name+'''");
+        </script>
 			<div class="panel panel-default col-lg-4" align="center">
 				<div class="panel-heading">
 					<h3 class="panel-title">Columns</h3>
