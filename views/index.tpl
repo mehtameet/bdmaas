@@ -144,7 +144,10 @@
 		
 		<!-- New code - Adding resultColumns div -->
 		<script>
-		$('#btnTR').submit(function(){
+		$('#postColumns').submit(function(event){
+		
+		event.preventDefault();
+		
 		var predictor = $('#predictor').val();
 		var target = $('#target').val();
 		var datasetname = $('#datasetname1').val();
