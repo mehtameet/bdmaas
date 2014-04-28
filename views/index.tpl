@@ -132,7 +132,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Datasets</h3>
 				</div>
-				<div id="showDatasets" class="panel-body" style="overflow-y: auto; height:200px;">
+				<div id="showDatasets" class="panel-body" style="overflow-y: auto; height:400px;">
 				</div>
 			</div>
 			
@@ -163,7 +163,7 @@
 		
 
 		
-		<div id="resultColumnsTrain" class="panel panel-default col-lg-6" style="text-align:center; display:none">
+		<div id="resultColumnsTrain" class="panel panel-default col-lg-8" style="text-align:center; height:400px; display:none">
 		<div class="panel-heading">
 					<h3 class="panel-title">Train Logistics Algorithm</h3>
 				</div>
@@ -180,7 +180,7 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="panel panel-default col-lg-6" style="text-align:center; display:none">
+		<div id="resultColumnsRF" class="panel panel-default col-lg-8" style="text-align:center; height:400px; display:none">
 		<div class="panel-heading">
 					<h3 class="panel-title">Random Forest Algorithm</h3>
 				</div>
@@ -202,7 +202,7 @@
 	  <div id="result"
 	  
       <footer class="navbar-static-bottom navbar-inverse">
-      <p style="color: #FFFFFF; align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
+      <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 

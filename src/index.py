@@ -111,13 +111,15 @@ def get_columns(name):
     for columns in column_names:
         result+='<li>'+columns+"</li>"
     result+='</div></div>'
-    return '''
-        <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
-        <script>
-        $('#datasetname').val("'''+name+'''");
-        $('#datasetname1').val("'''+name+'''");
-        $('#datasetname2').val("'''+name+'''");
-        </script>'''+result 
+    
+	return result
+	#return '''
+     #   <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+      #  <script>
+       # $('#datasetname').val("'''+name+'''");
+       # $('#datasetname1').val("'''+name+'''");
+       # $('#datasetname2').val("'''+name+'''");
+       # </script>'''+result 
 
 @route('/run_algorithms/<name>',method='POST')
 def run_algorithms(name):
