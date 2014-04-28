@@ -137,9 +137,10 @@
 			</div>
 				
 		<script>
-		$('#postColumns').submit(function(){
+		$('#postColumns').submit(function(e){
 		
-		
+		e.preventDefault();
+
 		var postData = $(this).serializeArray();
 		var formURL = $(this).attr("action");
 		
