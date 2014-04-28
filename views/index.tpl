@@ -199,7 +199,14 @@
       </div>
       </div><hr>
 	  
-	  <div id="result"
+	  <div id="result" class="panel panel-default col-lg-8" style="text-align:center; height:50px;>
+			<div class="panel-heading">
+				<h3 class="panel-title">Output</h3>
+			</div>
+			<div class="panel-body">
+			<p></p>
+			</div>
+	  </div>
 	  
       <footer class="navbar-fixed-bottom navbar-inverse">
       <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
