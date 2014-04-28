@@ -147,7 +147,8 @@
 		$('#btnTR').submit(function(){
 		var predictor = $('#predictor').val();
 		var target = $('#target').val();
-		$.post('/run_algorithms/train', {predictor: predictor, target: target}, function(data) {
+		var datasetname = $('#datasetname1').val();
+		$.post('/run_algorithms/train', {predictor: predictor, target: target, datasetname: datasetname1 }, function(data) {
 			$('#result').html(data);
 		});
 		});
