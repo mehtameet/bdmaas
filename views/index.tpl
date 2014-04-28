@@ -144,48 +144,11 @@
 		
 		<!-- New code - Adding resultColumns div -->
 		<script>
-		$(document).ready(function() {
-			$('form.finalProc').on('submit', function() {
-				var that = $(this),
-				url = that.attr('action'),
-				method = that.attr('method'),
-				data = {};
-			
-			that.find('[predictor]').each(function(index, value){
-				var that = $(this),
-					name = that.attr('predictor'),
-					value = that.val();
-				
-				data[predictor] = value;				
-			});
-			
-			that.find('[target]').each(function(index, value){
-				var that = $(this),
-					name = that.attr('target'),
-					value = that.val();
-				
-				data[target] = value;				
-			});
-			
-			that.find('[datasetname1]').each(function(index, value){
-				var that = $(this),
-					name = that.attr('datasetname1'),
-					value = that.val();
-				
-				data[datasetname1] = value;				
-			});
-		
-		$.ajax({
-			url: url,
-			type: method,
-			data: data,
-			success: function(response){
-				console.log(response);
-			}
-		});
-		
-		return false;
-		});
+		$('#btnTR').submit(function(){
+		var predictor = $('#predictor').val();
+		var target = $('#target').val();
+		$.post('/run_algorithms/train', {predictor: predictor, target: target}, function(data) {
+			$('#result').html(data);
 		});
 		</script>
 		
@@ -199,7 +162,7 @@
 			<input type="text" id="predictor" name="predictor" />
 			<label>Target</label>
 			<input type="text" id="target" name="target" /><br/>
-			<input type="submit">
+			<input type="submit" id="btnTR">
 			</form>
 		</div>
 		
@@ -216,10 +179,10 @@
 			<input type="submit">
 			</form>
 		</div>
-      
-		
       </div>
       </div><hr>
+	  
+	  <div id="result"
 	  
       <footer class="navbar-fixed-bottom navbar-inverse">
       <p style="color: #FFFFFF">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
