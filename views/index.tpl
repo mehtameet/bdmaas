@@ -147,13 +147,19 @@
 		$('#postColumns').submit(function(event){
 		
 		event.preventDefault();
+		var postData = $(this).serializeArray();
+		var formURL = $(this).attr("action");
 		
-		var predictor = $('#predictor').val();
-		var target = $('#target').val();
-		var datasetname = $('#datasetname1').val();
-		$.post('/run_algorithms/train', {predictor: predictor, target: target, datasetname: datasetname }, function(data) {
-			$('#result').html(data);
-			console.log(datasetname);
+		$.ajax(
+		{
+			url: formURL,
+			type: "POST",
+			data: postData,
+			success: function(data)
+			{
+				$('#result').html(data);
+			}
+
 		});
 		});
 		</script>
@@ -162,7 +168,7 @@
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form id="postColumns" enctype="multipart/form-data">
+			<form name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
