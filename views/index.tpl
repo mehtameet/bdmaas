@@ -128,7 +128,7 @@
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
 		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.</p>
         	
-			<div class="panel panel-default col-lg-4" style="text-align:left">
+			<div class="panel panel-default col-lg-4" style="text-align:center">
 				<div class="panel-heading">
 					<h3 class="panel-title">Datasets</h3>
 				</div>
@@ -163,11 +163,14 @@
 		
 
 		
-		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
+		<div id="resultColumnsTrain" class="panel panel-default col-lg-4" style="text-align:center; display:none">
+		<div class="panel-heading">
+					<h3 class="panel-title">Train Logistics Algorithm</h3>
+				</div>
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
+			<form  class="panel-body" name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
@@ -177,11 +180,14 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="container" align="center" style="display:none">
+		<div id="resultColumnsRF" class="panel panel-default col-lg-4" style="text-align:center; display:none">
+		<div class="panel-heading">
+					<h3 class="panel-title">Random Forest Algorithm</h3>
+				</div>
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
-			<form id="postColumns" method="post" action="/run_algorithms/random" class="finalProc">
+			<form id="postColumns" class="panel-body" method="post" action="/run_algorithms/random" class="finalProc">
 			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" />
