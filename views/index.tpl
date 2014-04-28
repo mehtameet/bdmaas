@@ -68,27 +68,26 @@
       <div class="container">
        <center><h2 id="uploadbtn">Upload</h2></center>
 	   <script>
-    	    $( "#uploadbtn" ).click(function() {
+    	    $( "#uploadbtn").click(function() {
 				$("#upload").fadeToggle("fast","swing",function() {
 		  });
 		});
 		</script>
 		</script>
         	
-        <div id="upload" style="text-align:center;"> 
-<!--		<div id="dragdrophandler">Drag and Drop your datasets HERE!</div>-->
-    <form id="form1" enctype="multipart/form-data" method="post" action="/upload/train">
+    <div id="upload" style="text-align:center; display:none">
+		<form id="form1" enctype="multipart/form-data" method="post" action="/upload/train">
 	    <label>Upload Training File</label>
 	    <input id="TrainingFile" type="file" name="data" multiple class="btn btn-default" style="margin: 10px 0 10px 420px"/>
 	    <input type="text" id="category" name="category" />
         <input type="submit" class="btn btn-primary btn-default" id="btnupload" role="button" value="Upload Your Dataset" style="margin: 10px 0 10px 0px" /> 
-	</form>
-	<form id="form2" enctype="multipart/form-data" method="post" action="/upload/test">
+		</form>
+		<form id="form2" enctype="multipart/form-data" method="post" action="/upload/test">
 	    <label>Upload Testing File</label>
 	    <input id="TestingFile" type="file" name="data" multiple class="btn btn-default" style="margin: 10px 0 10px 420px"/>   
         <input type="text" id="category" name="category" />
         <input type="submit" class="btn btn-primary btn-default" id="btnupload" role="button" value="Upload Your Dataset" style="margin: 10px 0 10px 0px" /> 
-	</form>
+		</form>
 	
         <div id="msg"><h1>{{msg}}</h1></div>    
       </div>
@@ -103,24 +102,6 @@
 		  });
 		});
 		
-		function showDiv(btnId)
-		{
-			HideDiv();
-			if(btnId=='btnTrain')
-			{
-				$('#resultColumnsTrain').show();
-			}
-			else if(btnId=='btnRF')
-			{
-				$('#resultColumnsRF').show();
-			}
-		}
-		
-		function HideDiv()
-		{
-			$('#resultColumnsRF').hide();
-			$('#resultColumnsTrain').hide();
-		}
         </script>
         
         <div id="selclassify" style="text-align:center;display:none">
