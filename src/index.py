@@ -106,12 +106,11 @@ def get_columns(name):
 					<h3 class="panel-title">Columns</h3>
 				</div>
 				<div id="showingCols" style="text-align:center; overflow-y: auto; height:200px;">
-				</div>
-			</div>
+				
 	'''
     for columns in column_names:
         result+='<li>'+columns+"</li>"
-    result+='</div>'
+    result+='</div></div>'
     return '''
         <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
         <script>
