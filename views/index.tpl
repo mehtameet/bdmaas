@@ -128,8 +128,16 @@
 		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
 		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.</p>
-        	<div id="showDatasets" style="overflow-y: auto; height:200px;">
-            </div>
+        	
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Datasets</h3>
+				</div>
+				<div id="showDatasets" class="panel-body" style="overflow-y: auto; height:200px;">
+				</div>
+			</div>
+			
+			
 		
 		
 		<!-- New code - Adding resultColumns div -->
