@@ -150,6 +150,7 @@
 		$.post('/run_algorithms/train', {predictor: predictor, target: target}, function(data) {
 			$('#result').html(data);
 		});
+		});
 		</script>
 		
 		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
