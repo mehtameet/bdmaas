@@ -104,7 +104,7 @@
 		
         </script>
         
-        <div id="selclassify" style="text-align:center;display:none">
+        <div id="selclassify" style="text-align:center;">
         <p>
 		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
@@ -145,7 +145,7 @@
 		
 
 		
-		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
+		<div id="resultColumnsTrain" class="container" align="center">
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
@@ -159,7 +159,7 @@
 			</form>
 		</div>
 		
-		<div id="resultColumnsRF" class="container" align="center" style="display:none">
+		<div id="resultColumnsRF" class="container" align="center">
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
