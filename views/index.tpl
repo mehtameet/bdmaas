@@ -127,10 +127,10 @@
         <p>
 		<input type="button" id="btnTrain" class="btn btn-primary btn-default" role="button" value="Train Logistics Algorithm" onClick="showDiv('btnTrain');" />
 		<input type="button" id="btnRF" class="btn btn-primary btn-default" role="button" value="Random Forest Algorithm" onClick="showDiv('btnRF');" />
-		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.
-        	<div id="showDatasets" style="overflow-y: auto; height:300px;">
+		<p>If your dataset is already uploaded. <a href="#" id="getDataset">Click Here</a> to get the list.</p>
+        	<div id="showDatasets" style="overflow-y: auto; height:200px;">
             </div>
-		</p>
+		
 		
 		<!-- New code - Adding resultColumns div -->
 		<script>
@@ -155,9 +155,7 @@
 		</script>
 		
 		<div id="resultColumnsTrain" class="container" align="center" style="display:none">
-			<div id="showColsTr">
-				Get Columns with dataset value -- train logistics
-			</div>
+		
 			<form name="postColumns" id="postColumns" action="/run_algorithms/train" method="POST">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
@@ -169,9 +167,7 @@
 		</div>
 		
 		<div id="resultColumnsRF" class="container" align="center" style="display:none">
-			<div id="showColsRF">
-				Get Columns with dataset value -- random forest
-			</div>
+			
 			<form id="postColumns" method="post" action="/run_algorithms/random" class="finalProc">
 			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
@@ -187,7 +183,7 @@
 	  <div id="result"
 	  
       <footer class="navbar-static-bottom navbar-inverse">
-      <p style="color: #FFFFFF; align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
+      <p style="color: #FFFFFF">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
 
