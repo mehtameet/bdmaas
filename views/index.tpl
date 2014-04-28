@@ -135,32 +135,7 @@
 				<div id="showDatasets" class="panel-body" style="overflow-y: auto; height:400px;">
 				</div>
 			</div>
-			
-			
-		
-		
-		<!-- New code - Adding resultColumns div -->
-		<script>
-		$('#postColumns').submit(function(event){
-		
-		event.preventDefault();
-		var postData = $(this).serializeArray();
-		var formURL = $(this).attr("action");
-		
-		$.ajax(
-		{
-			url: formURL,
-			type: "POST",
-			data: postData,
-			success: function(data)
-			{
-				$('#result').html(data);
-			}
-
-		});
-		});
-		</script>
-		
+				
 
 		
 		<div id="resultColumnsTrain" class="panel panel-default col-lg-8" style="text-align:center; height:400px; display:none">
@@ -199,7 +174,7 @@
       </div>
       </div><hr>
 	  
-	  <div id="result" class="panel panel-default col-lg-8" style="text-align:center; height:50px;>
+	  <div id="result" class="panel panel-default col-lg-8" style="text-align:center; height:50px;">
 			<div class="panel-heading">
 				<h3 class="panel-title">Output</h3>
 			</div>
