@@ -44,8 +44,9 @@ class fileformatting:
         line=f.readline()
         columns=line.split(",")
         for i in range(0,len(columns)):
-            if(column_name==columns[i]):
+            if(columns[i]==column_name):
                 print "column number is "+ str(i+1)
+                print "column name : "+columns[i]
                 return i
                 break;
     
