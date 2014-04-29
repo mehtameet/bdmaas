@@ -169,12 +169,16 @@
 			<script>
 $(document).ready(function() {
     $('#postColumnsTrain').submit(function(e) {
+	
+		$('#loading').html('<img src="../views/scripts/images/loadingBar.gif" width=50 height=50>');
+		
         $.ajax({
             type: 'POST',
             url: "/run_algorithms/train",
             data: $(this).serialize(),
             success: function(server_response) {
                 $('#result').html(server_response);
+				$('#loading').hide();
             }
         });
         e.preventDefault();
@@ -189,6 +193,7 @@ $(document).ready(function() {
 			<input type="text" id="target" name="target" /><br/>
 			<input type="submit" id="btnTR">
 			</form>
+			<div id="loading"></div>
 		</div>
 		
 		<div id="resultColumnsRF" class="panel panel-default col-lg-8" style="text-align:center; height:400px; display:none">
@@ -206,11 +211,12 @@ $(document).ready(function() {
 			<input type="text" id="target" name="target" /><br/>
 			<input type="submit">
 			</form>
+			<div id="loading"></div>
 		</div>
       </div>
       </div><hr>
 	  
-	  <div class="panel panel-default col-lg-8" style="align:center; height:50px">
+	  <div class="panel panel-default col-lg-12" style="align:center; height:50px">
 			<div class="panel-heading">
 				<h3 class="panel-title">Output</h3>
 			</div>
