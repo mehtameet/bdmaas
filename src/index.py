@@ -151,7 +151,7 @@ def index(name):
 	
 @get('/<filename:re:.*\.gif>')
 def stylesheets(filename):
-    return static_file(filename, root='.')
+    return static_file(filename, root='../views/scripts/images')
 
 @get('/<filename:re:.*\.css>')
 def stylesheets(filename):
