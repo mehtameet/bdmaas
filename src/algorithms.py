@@ -33,7 +33,8 @@ class algorithms:
         output, error = process.communicate()
         print ("output is "+output)
         print (error)
-        return output
+        result=output.split("AUC")[1]
+        return "AUC"+result
     
     def trainrandomforest(self,dataset_name,predictor,target):
         
