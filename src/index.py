@@ -150,7 +150,7 @@ def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
 	
 @get('/<filename:re:.*\.gif>')
-def stylesheets(filename):
+def images(filename):
     return static_file(filename, root='../views/scripts/images')
 
 @get('/<filename:re:.*\.css>')
