@@ -170,7 +170,7 @@
 $(document).ready(function() {
     $('#postColumnsTrain').submit(function(e) {
 	
-		$('#loading').html('<img src="../views/scripts/images/loadingBar.gif" width=50 height=50>');
+		$('#loading').html('<img src="/loadingBar.gif" width=50 height=50>');
 		
         $.ajax({
             type: 'POST',
