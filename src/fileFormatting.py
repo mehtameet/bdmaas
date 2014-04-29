@@ -43,6 +43,7 @@ class fileformatting:
         f=open("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train/"+filename)
         line=f.readline()
         columns=line.split(",")
+        print "checking for column name : "+column_name
         for i in range(0,len(columns)):
             if(columns[i]==column_name):
                 print "column number is "+ str(i+1)
