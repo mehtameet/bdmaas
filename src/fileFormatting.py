@@ -52,6 +52,7 @@ class fileformatting:
                 f.close()
                 return i
                 break;
+        return len(columns);
     
     def fetchTotalRowNumber(self,dataset_name):
         filename=os.listdir("/home/ubuntu/code/bdmaas/data/"+dataset_name+"/data/train")[0]
