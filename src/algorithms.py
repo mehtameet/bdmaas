@@ -103,6 +103,8 @@ class algorithms:
         print ("error is : "+error+" : got the error :)")
         result=error.split("Summary")[1]
         print "result is "+result
-        return result
+        new_result=result.split("\n")
+        final_result="<br/>".join(new_result)
+        return final_result
     
     
