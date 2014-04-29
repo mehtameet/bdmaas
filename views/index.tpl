@@ -11,7 +11,7 @@
     <title>BigDataMining</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="jumbotron.css" rel="stylesheet"> -->
