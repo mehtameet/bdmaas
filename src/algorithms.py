@@ -99,7 +99,7 @@ class algorithms:
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/examples/target/mahout-examples-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i /data/"+dataset_name+"/data/test/"+dataset_filestest[0]+" -ds /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -m nsl-forest -a -mr -o predictions"
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
-        print ("output is runrandomforest" +output)
+        print ("output is runrandomforest" +output + "got it")
         print (error)
         result=output
         print "result is "+result
