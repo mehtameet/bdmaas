@@ -214,7 +214,7 @@ $(document).ready(function() {
 			
 		</div>
       </div>
-      </div><hr>
+<hr />
 	  
 	  <div class="panel panel-default col-lg-10" style="align:center; height:50px">
 			<div class="panel-heading">
@@ -224,7 +224,7 @@ $(document).ready(function() {
 			<p></p>
 			</div>
 	  </div>
-	  
+      </div><hr />	  
       <footer class="navbar-inverse">
       <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
