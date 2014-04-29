@@ -45,6 +45,7 @@ class fileformatting:
         columns=line.split(",")
         print "checking for column name : "+column_name
         for i in range(0,len(columns)):
+            print columns[i]
             if(columns[i]==column_name):
                 print "column number is "+ str(i+1)
                 print "column name : "+columns[i]
