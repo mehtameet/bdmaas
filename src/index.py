@@ -148,6 +148,10 @@ def run_algorithms(name):
 @route('/hello/<name>')
 def index(name):
     return template('<b>Hello {{name}}</b>!', name=name)
+	
+@get('/<filename:re:.*\.gif>')
+def stylesheets(filename):
+    return static_file(filename, root='.')
 
 @get('/<filename:re:.*\.css>')
 def stylesheets(filename):
