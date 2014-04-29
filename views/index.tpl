@@ -188,15 +188,15 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#postColumnsRandom').submit(function(e) {
 	
-		$('#loading').html('<img src="/upload/loadingBar.gif" width=50 height=50>');
-		$('#loading').html('<img src="/loadingBar.gif" width=50 height=50>');
+		$('#loading1').html('<img src="/upload/loadingBar.gif" width=50 height=50>');
+		$('#loading1').html('<img src="/loadingBar.gif" width=50 height=50>');
         $.ajax({
             type: 'POST',
             url: "/run_algorithms/random",
             data: $(this).serialize(),
             success: function(server_response) {
                 $('#result').html(server_response);
-				$('#loading').hide();
+				$('#loading1').hide();
             }
         });
         e.preventDefault();
@@ -229,7 +229,7 @@ $(document).ready(function() {
 			<input type="text" id="target" name="target" /><br/>
 			<input type="submit">
 			</form>
-			<div id="loading"></div>
+			<div id="loading1"></div>
 		</div>
       </div>
 <hr />
