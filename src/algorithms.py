@@ -101,7 +101,7 @@ class algorithms:
         output, error = process.communicate()
         print ("output is runrandomforest" +output + "got it")
         print ("error is : "+error+" : got the error :)")
-        result=output
+        result=error.split("Summary")[1]
         print "result is "+result
         return result
     
