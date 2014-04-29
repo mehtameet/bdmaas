@@ -59,13 +59,15 @@ class algorithms:
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         dataset_filestest=datasetObj.get_datasetsFirstFilenametest(dataset_name)
         #to do remove nsl-forest & predictor
-        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -rmr /user/ubuntu/nsl*"
+        #bashCommand="$HADOOP_PREFIX/bin/hadoop fs -rmr /user/ubuntu/nsl-forest"
+        bashCommand='curl -i -X DELETE "http://54.186.225.72:50070/webhdfs/v1/user/ubuntu/nsl-forest?op=DELETE&user.name=ubuntu&recursive=true"'
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is testrandomforest" +output)
         print (error)
 
-        bashCommand="$HADOOP_PREFIX/bin/hadoop fs -rmr /user/ubuntu/predict*"
+        #bashCommand="$HADOOP_PREFIX/bin/hadoop fs -rmr /user/ubuntu/predictions"
+        bashCommand='curl -i -X DELETE "http://54.186.225.72:50070/webhdfs/v1/user/ubuntu/predictions?op=DELETE&user.name=ubuntu&recursive=true"'
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is testrandomforest" +output)
