@@ -100,7 +100,7 @@ class algorithms:
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         print ("output is runrandomforest" +output + "got it")
-        print (error)
+        print ("error is : "+error+" : got the error :)")
         result=output
         print "result is "+result
         return result
