@@ -136,7 +136,27 @@
 				</div>
 			</div>
 				
+		<script>
+		$('#postColumns').submit(function(e){
+		
+		e.preventDefault();
 
+		var postData = $(this).serializeArray();
+		var formURL = $(this).attr("action");
+		
+		$.ajax(
+		{
+			url: formURL,
+			type: "POST",
+			data: postData,
+			success: function(data)
+			{
+				$('#result').html(data);
+			}
+
+		});
+		});
+		</script>
 		
 		<div id="resultColumnsTrain" class="panel panel-default col-lg-8" style="text-align:center; height:400px; display:none">
 		<div class="panel-heading">
@@ -190,11 +210,11 @@ $(document).ready(function() {
       </div>
       </div><hr>
 	  
-	  <div id="result" class="panel panel-default col-lg-8" style="text-align:center; height:50px;">
+	  <div class="panel panel-default col-lg-8" style="align:center; height:50px">
 			<div class="panel-heading">
 				<h3 class="panel-title">Output</h3>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body" id="result">
 			<p></p>
 			</div>
 	  </div>
