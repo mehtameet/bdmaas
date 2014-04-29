@@ -102,6 +102,7 @@ class algorithms:
         print ("output is runrandomforest" +output)
         print (error)
         result=output.split("Summary")[0]
+        print "result is "+result
         return result
     
     
