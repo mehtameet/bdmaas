@@ -170,8 +170,8 @@
 $(document).ready(function() {
     $('#postColumnsTrain').submit(function(e) {
 	
+		$('#loading').html('<img src="/upload/loadingBar.gif" width=50 height=50>');
 		$('#loading').html('<img src="/loadingBar.gif" width=50 height=50>');
-		
         $.ajax({
             type: 'POST',
             url: "/run_algorithms/train",
