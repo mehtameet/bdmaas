@@ -211,21 +211,21 @@ $(document).ready(function() {
 			<input type="text" id="target" name="target" /><br/>
 			<input type="submit">
 			</form>
-			<div id="loading"></div>
+			
 		</div>
       </div>
       </div><hr>
 	  
-	  <div class="panel panel-default col-lg-12" style="align:center; height:50px">
+	  <div class="panel panel-default col-lg-10" style="align:center; height:50px">
 			<div class="panel-heading">
-				<h3 class="panel-title">Output</h3>
+				<h3 class="panel-title" style="text-align: center">Output</h3>
 			</div>
 			<div class="panel-body" id="result">
 			<p></p>
 			</div>
 	  </div>
 	  
-      <footer class="navbar-fixed-bottom navbar-inverse">
+      <footer class="navbar-inverse">
       <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
       </footer>
     </div> <!-- /container -->
