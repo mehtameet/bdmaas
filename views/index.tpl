@@ -15,7 +15,7 @@
 
     <!-- Custom styles for this template -->
     <!-- <link href="jumbotron.css" rel="stylesheet"> -->
-    <link href="bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap-3.1.1-dist/css/bootstrap.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
 	<!--<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
