@@ -60,6 +60,7 @@ class fileformatting:
     def randomForestLabelString(self,dataset_name,predictor,target):
         categoryNumber=fileformatting.fetchColumnNumber(self, dataset_name, predictor)
         labelNumber=fileformatting.fetchColumnNumber(self, dataset_name, target)
+        print "labelnumber for target is : "+str(labelNumber)
         randomforeststring=""
         for i in range(0,fileformatting.fetchTotalRowNumber(self, dataset_name)):
             if (i==categoryNumber):
