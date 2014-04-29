@@ -47,6 +47,7 @@ class fileformatting:
             if(columns[i]==column_name):
                 print "column number is "+ str(i+1)
                 print "column name : "+columns[i]
+                f.close()
                 return i
                 break;
     
