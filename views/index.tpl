@@ -242,9 +242,9 @@ $(document).ready(function() {
 			</div>
 	  </div>
       </div><hr />	  
-      <footer class="navbar-inverse">
+      <!--<footer class="navbar-fixed-bottom navbar-inverse">
       <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
-      </footer>
+      </footer>-->
     </div> <!-- /container -->
 
 
