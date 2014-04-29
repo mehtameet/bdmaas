@@ -229,7 +229,7 @@ $(document).ready(function() {
 			<input type="text" id="target" name="target" /><br/>
 			<input type="submit">
 			</form>
-			
+			<div id="loading"></div>
 		</div>
       </div>
 <hr />
