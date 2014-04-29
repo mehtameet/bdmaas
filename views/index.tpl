@@ -145,7 +145,23 @@
 			<div id="showColsTr">
 				Get Columns with dataset value -- train logistics
 			</div>
-			<form class="panel-body" name="postColumns" id="postColumns" action="/run_algorithms/train" method="post">
+			<!-- temp meet's script for ajax post-->
+			<script>
+$(document).ready(function() {
+    $('#postColumnsTrain').submit(function(e) {
+        $.ajax({
+            type: 'POST',
+            url: "/run_algorithms/train",
+            data: $(this).serialize(),
+            success: function(server_response) {
+                $('#result').html(server_response);
+            }
+        });
+        e.preventDefault();
+    });
+});
+</script>
+			<form class="panel-body" name="postColumns" id="postColumnsTrain" method="post">
 			<input type="hidden" id="datasetname1" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" /><br/>
