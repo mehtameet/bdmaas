@@ -221,7 +221,6 @@ $(document).ready(function() {
 				<h3 class="panel-title" style="text-align: center">Output</h3>
 			</div>
 			<div class="panel-body" id="result">
-			<p></p>
 			</div>
 	  </div>
       </div><hr />	  
