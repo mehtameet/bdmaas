@@ -63,12 +63,15 @@ class fileformatting:
         return len(columns)
     
     def randomForestLabelString(self,dataset_name,predictor,target):
-        categoryNumber=fileformatting.fetchColumnNumber(self, dataset_name, predictor)
+        categoryNumberList=[]
+        for i in predictor:
+            categoryNumberList.append(fileformatting.fetchColumnNumber(self, dataset_name, i))
+        #categoryNumber=fileformatting.fetchColumnNumber(self, dataset_name, predictor)
         labelNumber=fileformatting.fetchColumnNumber(self, dataset_name, target)
         print "labelnumber for target is : "+str(labelNumber)
         randomforeststring=""
         for i in range(0,fileformatting.fetchTotalRowNumber(self, dataset_name)):
-            if (i==categoryNumber):
+            if i in categoryNumberList:
                 randomforeststring+=" C"
             elif (i==labelNumber):
                 randomforeststring+=" L"
