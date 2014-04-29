@@ -43,8 +43,17 @@ class algorithms:
         #dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
         #bashCommand="$HADOOP_PREFIX/bin/hadoop jar SMAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/KDDTrain+.info -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L"
         #predictor=predictors.split(",")
+        
         randomForestLabelString=fileformattingObj.randomForestLabelString(dataset_name, predictor, target)
         dataset_files=datasetObj.get_datasetsFirstFilename(dataset_name)
+        
+        bashCommand='curl -i -X DELETE "http://54.186.225.72:50070/webhdfs/v1/data/'+dataset_name+'/data/train/'+dataset_files[0]+'.info?op=DELETE&user.name=ubuntu"'
+        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        output, error = process.communicate()
+        print ("output is testrandomforest" +output)
+        print (error)
+        
+        
         print "randomForestLabelString is : "+randomForestLabelString
         bashCommand="$HADOOP_PREFIX/bin/hadoop jar $MAHOUT_HOME/core/target/mahout-core-1.0-SNAPSHOT-job.jar org.apache.mahout.classifier.df.tools.Describe -p /data/"+dataset_name+"/data/train/"+dataset_files[0]+" -f /data/"+dataset_name+"/data/train/"+dataset_files[0]+".info -d "+randomForestLabelString
         process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
