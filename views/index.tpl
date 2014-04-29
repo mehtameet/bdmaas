@@ -184,6 +184,24 @@ $(document).ready(function() {
         e.preventDefault();
     });
 });
+
+$(document).ready(function() {
+    $('#postColumnsRandom').submit(function(e) {
+	
+		$('#loading').html('<img src="/upload/loadingBar.gif" width=50 height=50>');
+		$('#loading').html('<img src="/loadingBar.gif" width=50 height=50>');
+        $.ajax({
+            type: 'POST',
+            url: "/run_algorithms/random",
+            data: $(this).serialize(),
+            success: function(server_response) {
+                $('#result').html(server_response);
+				$('#loading').hide();
+            }
+        });
+        e.preventDefault();
+    });
+});
 </script>
 			<form class="panel-body" name="postColumns" id="postColumnsTrain" method="post">
 			<input type="hidden" id="datasetname1" name="datasetname" />
@@ -203,7 +221,7 @@ $(document).ready(function() {
 			<div id="showColsRF">
 				Get Columns with dataset value -- random forest
 			</div>
-			<form id="postColumns" class="panel-body" method="post" action="/run_algorithms/random" class="finalProc">
+			<form id="postColumnsRandom" class="panel-body" method="post" action="/run_algorithms/random" class="finalProc">
 			<input type="hidden" id="datasetname2" name="datasetname" />
 			<label>Predictor</label>
 			<input type="text" id="predictor" name="predictor" /><br/>

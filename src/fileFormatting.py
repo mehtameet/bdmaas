@@ -24,8 +24,16 @@ class fileformatting:
             j=0;
             for j in range(0,len(data)):
                 if (j%2!=0):
+                    print data[j]
                     data[j]=data[j].replace(",","")
-                f1.write(data[j])
+            new_line="".join(data)
+            data_columns=new_line.split(",")
+            result=True
+            for k in data_columns:
+                if(k==""):
+                    result=False
+            if result==True:
+                f1.write(new_line)
         f1.close()
         f.close()
         
