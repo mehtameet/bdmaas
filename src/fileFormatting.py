@@ -46,7 +46,7 @@ class fileformatting:
         for i in range(0,len(columns)):
             if(column_name==columns[i]):
                 print "column number is "+ str(i+1)
-                return i+1
+                return i
                 break;
     
     def fetchTotalRowNumber(self,dataset_name):
@@ -55,13 +55,13 @@ class fileformatting:
         line=f.readline()
         columns=line.split(",")
         print "total no. of columns is "+str(len(columns))
-        return len(columns)+1
+        return len(columns)
     
     def randomForestLabelString(self,dataset_name,predictor,target):
         categoryNumber=fileformatting.fetchColumnNumber(self, dataset_name, predictor)
         labelNumber=fileformatting.fetchColumnNumber(self, dataset_name, target)
         randomforeststring=""
-        for i in range(1,fileformatting.fetchTotalRowNumber(self, dataset_name)):
+        for i in range(0,fileformatting.fetchTotalRowNumber(self, dataset_name)):
             if (i==categoryNumber):
                 randomforeststring+=" C"
             elif (i==labelNumber):
