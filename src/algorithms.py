@@ -101,6 +101,7 @@ class algorithms:
         output, error = process.communicate()
         print ("output is runrandomforest" +output)
         print (error)
-        return output
+        result=output.split("INFO mapreduce.TestForest:")[1]
+        return result
     
     
