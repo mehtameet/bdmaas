@@ -240,8 +240,7 @@ $(document).ready(function() {
 			</div>
 			<div class="panel-body" id="result">
 			</div>
-	  </div>
-	  	<script>
+			<script>
 	    var a = document.body.appendChild(
         document.createElement("a")
         );
@@ -249,6 +248,8 @@ $(document).ready(function() {
         a.href = "data:text/html," + document.getElementById("result").innerHTML;
         a.innerHTML = "<input type=\"button\" value=\"Download Results\" class=\"btn btn-default\" />";
         </script>
+	  </div>
+	  	
       </div><hr />	  
       <!--<footer class="navbar-fixed-bottom navbar-inverse">
       <p style="color: #FFFFFF; text-align:center">&copy; Kuntal Shah &nbsp; &nbsp; &nbsp; Meet Mehta &nbsp; &nbsp; &nbsp; Neel Anand<br/></p>
