@@ -234,7 +234,7 @@ $(document).ready(function() {
       </div>
 <hr />
 	  
-	  <div class="panel panel-default col-lg-10" style="align:center; height:50px">
+	  <div class="panel panel-default col-lg-12" style="align:center; height:50px">
 			<div class="panel-heading">
 				<h3 class="panel-title" style="text-align: center">Output</h3>
 			</div>
@@ -246,7 +246,7 @@ $(document).ready(function() {
         );
         a.download = "result.html";
         a.href = "data:text/html," + document.getElementById("result").innerHTML;
-        a.innerHTML = "<input type=\"button\" value=\"Download Results\" class=\"btn btn-default\" />";
+        a.innerHTML = "<input type=\"button\" value=\"Download Results\" class=\"btn btn-success\"  style=\"text-align: center\" />";
         </script>
 	  </div>
 	  	
