@@ -242,7 +242,7 @@ $(document).ready(function() {
 			</div>
 			<script>
 	    var a = document.body.appendChild(
-        document.createElement("div")
+        document.createElement("a")
         );
         a.download = "result.html";
         a.href = "data:text/html," + document.getElementById("result").innerHTML;
